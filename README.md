@@ -107,6 +107,7 @@ $$
 $$
 = \tau
 $$
+
 ------------------------------------------------------------------------
 
 $\mathbb{E}[\hat{\tau}]  - \tau = 0$ therefore $\hat{\tau}$ is an unbiased estimator of $\tau$
