@@ -36,18 +36,33 @@ One approach to a meta-analysis assumes that each $\hat{\tau_i}$ is an unbiased 
 Consider the proposed combined estimator $\hat{\tau}$
 
 $$\hat{\tau} = \frac{\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \hat{\tau_i}}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}} $$
-Find the expectation of $\hat{\tau}$. Is it an unbiased estimator of $\tau$?
+We will find the expectation of $\hat{\tau}$ and assess if it is an unbiased estimator of $\tau$.
 
 ******
 
-\begin{align}
-\mathbb{E}[\hat{\tau}] &= \mathbb{E}\left[\frac{\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \hat{\tau_i}}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}}\right]\\
-&= \frac{1}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}} \mathbb{E}\left[\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \hat{\tau_i}\right] \\
-&= \frac{1}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}} \sum_{i = 1}^K  \frac{1}{\sigma_i^2} \mathbb{E}\left[\hat{\tau_i}\right] \\
-&= \frac{1}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}} \sum_{i = 1}^K  \frac{1}{\sigma_i^2} \tau \\
-&= \tau \frac{\sum_{i = 1}^K  \frac{1}{\sigma_i^2} }{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}}  \\
-&= \tau
-\end{align}
+$$
+\mathbb{E}[\hat{\tau}] = \mathbb{E}\left[\frac{\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \hat{\tau_i}}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}}\right]\\
+$$
+
+$$
+= \frac{1}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}} \mathbb{E}\left[\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \hat{\tau_i}\right] \\
+$$
+
+$$
+= \frac{1}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}} \sum_{i = 1}^K  \frac{1}{\sigma_i^2} \mathbb{E}\left[\hat{\tau_i}\right] \\
+$$
+
+$$
+= \frac{1}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}} \sum_{i = 1}^K  \frac{1}{\sigma_i^2} \tau \\
+$$
+
+$$
+= \tau \frac{\sum_{i = 1}^K  \frac{1}{\sigma_i^2} }{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}}  \\
+$$
+
+$$
+= \tau
+$$
 
 $\mathbb{E}[\hat{\tau}]  - \tau = 0$ therefore $\hat{\tau}$ is an unbiased estimator of $\tau$
 
@@ -56,14 +71,29 @@ $\mathbb{E}[\hat{\tau}]  - \tau = 0$ therefore $\hat{\tau}$ is an unbiased estim
 Find the variance of $\hat{\tau}$ (under the assumption that $\sigma_i$ is known for all $i$).
 
 ******
-\begin{align}
-Var[\hat{\tau}] &= Var\left[\frac{\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \hat{\tau_i}}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}}\right]\\
-&= \frac{1}{\left(\sum_{i = 1}^K  \frac{1}{\sigma_i^2}\right)^2} Var\left[\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \hat{\tau_i}\right] \\
-&= \frac{1}{\left(\sum_{i = 1}^K  \frac{1}{\sigma_i^2}\right)^2} \left[\sum_{i = 1}^K  \frac{1}{(\sigma_i^2)^2} Var(\hat{\tau_i})\right] \\
-&= \frac{1}{\left(\sum_{i = 1}^K  \frac{1}{\sigma_i^2}\right)^2} \left[\sum_{i = 1}^K  \frac{\sigma^2_i}{(\sigma_i^2)^2} \right] \\
-&= \frac{1}{\left(\sum_{i = 1}^K  \frac{1}{\sigma_i^2}\right)^2} \left[\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \right] \\
-&= \frac{1}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}}
-\end{align}
+$$
+Var[\hat{\tau}] = Var\left[\frac{\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \hat{\tau_i}}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}}\right]\\
+$$
+
+$$
+= \frac{1}{\left(\sum_{i = 1}^K  \frac{1}{\sigma_i^2}\right)^2} Var\left[\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \hat{\tau_i}\right] \\
+$$
+
+$$
+= \frac{1}{\left(\sum_{i = 1}^K  \frac{1}{\sigma_i^2}\right)^2} \left[\sum_{i = 1}^K  \frac{1}{(\sigma_i^2)^2} Var(\hat{\tau_i})\right] \\
+$$
+
+$$
+= \frac{1}{\left(\sum_{i = 1}^K  \frac{1}{\sigma_i^2}\right)^2} \left[\sum_{i = 1}^K  \frac{\sigma^2_i}{(\sigma_i^2)^2} \right] \\
+$$
+
+$$
+= \frac{1}{\left(\sum_{i = 1}^K  \frac{1}{\sigma_i^2}\right)^2} \left[\sum_{i = 1}^K  \frac{1}{\sigma_i^2} \right] \\
+$$
+
+$$
+= \frac{1}{\sum_{i = 1}^K  \frac{1}{\sigma_i^2}}
+$$
 
 ******
 ### Creating a Point Estimator & Variance for Multiple Studies
